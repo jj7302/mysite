@@ -1,0 +1,27 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+  <div class="row">
+    <table>
+        <thead>
+          <tr>
+              <th>Event Name</th>
+              <th>Hours</th>
+              <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+    {% for event in events %}
+          <tr>
+            <td>{{event.event_name}}</td>
+            <td>{{event.hours}}</td>
+              <td>{{event.date | date:"F d Y"}}</td>
+          </tr>
+    {% endfor %}
+       </tbody>
+      </table>
+  </div>
+
+
+{% endblock %}

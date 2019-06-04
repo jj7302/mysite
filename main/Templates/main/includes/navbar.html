@@ -1,0 +1,19 @@
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Tartar Knights</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+          {% if user.is_authenticated and user.profile.access == "creator" %}
+          <li><a href="/check-hours">View Member's Hours</a></li>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <li><a href="/log-hours">Log Hours</a></li>
+        <li><a href="/view-hours">View Hours</a></li>
+        <li><a href="/account">{{user.username}}</a></li>
+        <li><a href="/logout">Logout</a></li>
+          {% else %}<li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+          {% endif %}
+      </ul>
+    </div>
+  </nav>

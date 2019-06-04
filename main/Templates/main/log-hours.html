@@ -1,0 +1,13 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button class="btn" type="submit">Submit</button>
+  </form>
+
+<p> If you want to view your hours, <a href="/view-hours"><strong>click here.</strong></a></p>
+
+{% endblock %}

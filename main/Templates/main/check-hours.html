@@ -1,0 +1,26 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+  <div class="row">
+    <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Total Hours</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+    {% for member in members %}
+          <tr>
+            <td ><a href={{member.link}}>{{member.username}}</a></td>
+            <td>{{member.hours}}</td>
+          </tr>
+    {% endfor %}
+       </tbody>
+      </table>
+  </div>
+
+
+{% endblock %}
